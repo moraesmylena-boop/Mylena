@@ -6,7 +6,6 @@
     <title>Mylena Eletrônicos - A Sua Loja de Tecnologia</title>
     
     <style>
-        /* Configuracoes Gerais da Pagina */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -30,14 +29,14 @@
         }
 
         header h1 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: 8px;
             letter-spacing: 1px;
         }
 
         header p {
-            font-size: 16px;
+            font-size: 15px;
             color: #8b949e;
         }
 
@@ -46,29 +45,31 @@
             width: 100%;
             background-color: #161b22;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px 10px;
         }
 
         .banner-container img {
-            width: 90%;
-            max-width: 950px;
+            width: 100%;
+            max-width: 900px;
             height: auto;
             border-radius: 12px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto;
         }
 
         /* Secao Principal de Produtos */
         main {
             max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 30px auto;
+            padding: 0 15px;
         }
 
         .titulo-secao {
             text-align: center;
-            font-size: 26px;
+            font-size: 24px;
             color: #0d1117;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -77,26 +78,27 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         /* Cartoes de Produtos */
         article.card-produto {
             background-color: #ffffff;
             border: 1px solid #e1e4e8;
-            border-radius: 10px;
-            width: 230px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 260px;
             padding: 20px;
             text-align: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease-in-out;
         }
 
         article.card-produto img {
             width: 100%;
-            height: 160px;
+            height: 180px;
             object-fit: contain;
             margin-bottom: 15px;
+            display: block;
         }
 
         article.card-produto h3 {
@@ -106,7 +108,7 @@
         }
 
         article.card-produto .preco {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: #2ea44f;
             margin-bottom: 15px;
@@ -116,8 +118,8 @@
             background-color: #2ea44f;
             color: #ffffff;
             border: none;
-            padding: 10px 15px;
-            font-size: 14px;
+            padding: 12px 15px;
+            font-size: 15px;
             font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
@@ -130,7 +132,7 @@
             border-top: 1px solid #e1e4e8;
             border-bottom: 1px solid #e1e4e8;
             padding: 30px 20px;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .container-diferenciais {
@@ -140,22 +142,30 @@
             justify-content: space-around;
             flex-wrap: wrap;
             text-align: center;
+            gap: 20px;
         }
 
         .item-diferencial {
-            margin: 15px;
+            flex: 1;
+            min-width: 200px;
         }
 
         .item-diferencial img {
-            width: 45px;
-            height: 45px;
-            margin-bottom: 8px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .item-diferencial h4 {
+            font-size: 16px;
+            color: #0d1117;
+            margin-bottom: 5px;
         }
 
         .item-diferencial p {
-            font-weight: bold;
-            font-size: 16px;
-            color: #24292e;
+            font-size: 13px;
+            color: #586069;
         }
 
         /* Rodape */
@@ -165,7 +175,7 @@
             text-align: center;
             padding: 30px 20px;
             font-size: 14px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         footer p {
@@ -184,11 +194,11 @@
 
     <header>
         <h1>Mylena Eletrônicos</h1>
-        <p>A sua loja de tecnologia, celulares e acessorios em Chopinzinho</p>
+        <p>A sua loja de tecnologia, celulares e acessórios em Chopinzinho</p>
     </header>
 
     <section class="banner-container">
-        <img src="691c4284b3d7a87e3be7ff5918873099.jpg" alt="Banner Oficial Mylena Eletrônicos">
+        <img src="691c428496997bcd2783ccc1820ad2d6.jpg" alt="Banner Oficial Mylena Eletrônicos">
     </section>
 
     <main>
@@ -197,23 +207,23 @@
         <div class="grid-produtos">
             
             <article class="card-produto">
-                <img src="691c4284b3d7a87e3be7ff5918873099.jpg" alt="Smartphone High-Tech">
+                <img src="e3e66e45dd20cc71d7b8752b483ede12.jpg" alt="Smartphone High-Tech">
                 <h3>Smartphone High-Tech</h3>
                 <p class="preco">R$ 1.899,00</p>
                 <button type="button">Comprar Agora</button>
             </article>
 
             <article class="card-produto">
-                <img src="5a68d067e27ddb019bda3a7935fb31aa.jpg" alt="Fone Bluetooth Pro">
+                <img src="ad22fbced8453477150a3076cd49267f.jpg" alt="Fone Bluetooth Pro">
                 <h3>Fone Bluetooth Pro</h3>
                 <p class="preco">R$ 249,00</p>
                 <button type="button">Comprar Agora</button>
             </article>
 
             <article class="card-produto">
-                <img src="a1a10dfbe22f2cb8cc5ae64b73e5bf02.jpg" alt="Tablet Ultrafino 10">
-                <h3>Tablet Ultrafino 10"</h3>
-                <p class="preco">R$ 1.299,00</p>
+                <img src="7db2ac993e53182c9a1a1f651f86fef0.jpg" alt="Smartwatch Sport">
+                <h3>Smartwatch Sport</h3>
+                <p class="preco">R$ 399,00</p>
                 <button type="button">Comprar Agora</button>
             </article>
 
@@ -231,13 +241,15 @@
         <div class="container-diferenciais">
             
             <div class="item-diferencial">
-                <img src="c2c3aa3a6acbbfef1ab09d62e0859479.jpg" alt="Entrega Rapida">
-                <p>Entrega Rápida</p>
+                <img src="a8b05fcb1fc67c4077e0b68908859071.jpg" alt="Garantia Oficial">
+                <h4>Garantia Oficial</h4>
+                <p>Todos os produtos possuem garantia de até 12 meses.</p>
             </div>
 
             <div class="item-diferencial">
-                <img src="31ed22dc58062278c1a295d6be03c967.jpg" alt="Desconto no Pix">
-                <p>Desconto no Pix</p>
+                <img src="c2e3aa3a6acbbfe1ab09d62e0859479.jpg" alt="Entrega Rapida">
+                <h4>Entrega Rápida</h4>
+                <p>Enviamos para todo o Brasil com rastreamento.</p>
             </div>
 
         </div>
@@ -254,3 +266,4 @@
 
 </body>
 </html>
+
