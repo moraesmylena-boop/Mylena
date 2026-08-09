@@ -6,7 +6,7 @@
     <title>Lux Catholica | Artigos Sacros & Devocionais</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #0a0a0a;
@@ -48,24 +48,23 @@
             color: var(--gold-light);
             text-align: center;
             padding: 8px 15px;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--gold-dark);
+            font-size: 0.8rem;
             font-weight: 500;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--gold-dark);
         }
 
-        /* Cabeçalho / Navegação */
+        /* Header & Nav */
         header {
             background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             backdrop-filter: blur(10px);
         }
 
-        .header-container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -82,109 +81,81 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
         .brand-logo span {
             color: var(--accent-red-bright);
         }
 
-        nav ul {
+        .nav-menu {
             display: flex;
             list-style: none;
             gap: 25px;
         }
 
-        nav a {
+        .nav-link {
             color: var(--text-light);
             text-decoration: none;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 500;
             transition: color 0.3s;
+            position: relative;
         }
 
-        nav a:hover, nav a.active {
+        .nav-link:hover {
             color: var(--gold-primary);
         }
 
-        .cart-btn {
-            background: transparent;
-            border: 1px solid var(--gold-primary);
-            color: var(--gold-primary);
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
-            transition: all 0.3s;
-        }
-
-        .cart-btn:hover {
-            background: var(--gold-primary);
-            color: var(--bg-dark);
-        }
-
-        /* Banner Principal (Hero) */
+        /* Hero Banner */
         .hero {
             position: relative;
-            height: 75vh;
-            min-height: 500px;
-            background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.85)), 
-                        url('https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/c50ed4bebc2a049bebe215bc468b9cac.jpg') center/cover no-repeat;
+            height: 70vh;
+            min-height: 450px;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('c50ed4bebc2a049bebe215bc468b9cac.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            border-bottom: 2px solid var(--gold-primary);
             padding: 0 20px;
+            border-bottom: 1px solid var(--gold-dark);
         }
 
         .hero-content {
             max-width: 800px;
-            padding: 40px;
-            background: rgba(10, 10, 10, 0.75);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(212, 175, 55, 0.15);
-            border-radius: 8px;
         }
 
         .hero-subtitle {
-            color: var(--gold-light);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 10px;
+            color: var(--gold-primary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
         }
 
         .hero-title {
-            font-size: 2.8rem;
-            color: #ffffff;
+            font-size: 3rem;
+            color: #fff;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .hero-title span {
-            color: var(--gold-primary);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
         .hero-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
             color: #d0d0d0;
-            font-size: 1rem;
             margin-bottom: 30px;
-            font-weight: 300;
+            font-style: italic;
         }
 
         .btn-gold {
             display: inline-block;
             background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: var(--bg-dark);
+            color: #000;
             padding: 14px 32px;
-            text-decoration: none;
             font-family: 'Cinzel', serif;
             font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-decoration: none;
             border-radius: 4px;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
@@ -196,31 +167,25 @@
             background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
         }
 
-        /* Seções */
-        section {
-            padding: 70px 20px;
+        /* Seções Genericas */
+        .section-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .section-title {
-            text-align: center;
             font-size: 2.2rem;
             color: var(--gold-primary);
             margin-bottom: 10px;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 50px;
-        }
-
         .divider-ornament {
-            text-align: center;
             color: var(--accent-red-bright);
             font-size: 1.5rem;
             margin-bottom: 10px;
@@ -229,7 +194,7 @@
         /* Grid de Produtos */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
@@ -246,40 +211,27 @@
         .product-card:hover {
             transform: translateY(-5px);
             border-color: var(--gold-primary);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.8), 0 0 15px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            background-color: var(--bg-card-hover);
         }
 
-        .product-img-wrapper {
+        .product-image-box {
             position: relative;
-            height: 320px;
+            width: 100%;
+            height: 280px;
             overflow: hidden;
             background-color: #000;
         }
 
-        .product-img {
+        .product-image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s;
         }
 
-        .product-card:hover .product-img {
+        .product-card:hover .product-image-box img {
             transform: scale(1.05);
-        }
-
-        .product-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent-red);
-            color: white;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         .product-info {
@@ -289,316 +241,205 @@
             flex-grow: 1;
         }
 
+        .product-category {
+            font-size: 0.75rem;
+            color: var(--accent-red-bright);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
         .product-title {
             font-size: 1.1rem;
             color: var(--text-light);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .product-desc {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .product-price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
+            margin-bottom: 10px;
         }
 
         .product-price {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--gold-primary);
             font-weight: 700;
+            margin-top: auto;
+            margin-bottom: 15px;
         }
 
-        .btn-add-cart {
+        .btn-buy {
+            display: block;
+            text-align: center;
             background: transparent;
             border: 1px solid var(--gold-primary);
-            color: var(--gold-primary);
-            padding: 8px 14px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .btn-add-cart:hover {
-            background: var(--gold-primary);
-            color: var(--bg-dark);
-        }
-
-        /* Seção de Orações Interativa */
-        .prayers-section {
-            background: linear-gradient(180deg, var(--bg-dark) 0%, #110808 50%, var(--bg-dark) 100%);
-            border-top: 1px solid rgba(139, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
-            padding: 80px 20px;
-            margin: 40px 0;
-        }
-
-        .prayer-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 35px;
-        }
-
-        .tab-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
-            padding: 12px 22px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--accent-red);
-            border-color: var(--gold-primary);
             color: var(--gold-light);
-            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
-        }
-
-        .prayer-box {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-dark);
-            border-radius: 8px;
-            padding: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.9);
-            display: none;
-        }
-
-        .prayer-box.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .prayer-box h3 {
-            color: var(--gold-primary);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .prayer-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            line-height: 1.8;
-            color: #e0e0e0;
-            font-style: italic;
-            white-space: pre-line;
-        }
-
-        /* Informações e Localização */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .info-card {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .info-card h3 {
-            color: var(--gold-primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .info-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Botão Flutuante do WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            padding: 10px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
+            font-size: 0.85rem;
+            font-family: 'Cinzel', serif;
             transition: all 0.3s;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.05);
+        .btn-buy:hover {
+            background: var(--accent-red);
+            border-color: var(--accent-red-bright);
+            color: #fff;
         }
 
-        .whatsapp-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Rodapé */
+        /* Footer */
         footer {
-            background: #050505;
+            background-color: #050505;
             border-top: 1px solid var(--border-color);
-            padding: 50px 20px 20px;
+            padding: 50px 20px 20px 20px;
             text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 30px;
         }
 
         .footer-logo {
-            font-family: 'Cinzel', serif;
             font-size: 1.5rem;
             color: var(--gold-primary);
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            max-width: 600px;
-            margin: 15px auto;
+            margin-bottom: 15px;
         }
 
         .copyright {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.8rem;
-            margin-top: 30px;
             border-top: 1px solid #1a1a1a;
             padding-top: 20px;
+        }
+
+        /* Responsivo Mobile */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            .hero-title { font-size: 2.2rem; }
+            .hero-description { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        ✦ Entregas Abençoadas para Todo o Brasil • Pagamento via PIX com 5% de Desconto ✦
+        ✠ ARTIGOS SACROS & DEVOCIONAIS — ENTREGAMOS EM TODO O BRASIL ✠
     </div>
 
     <header>
-        <div class="header-container">
-            <a href="#" class="brand-logo">LUX <span>CATHOLICA</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#produtos">Coleção</a></li>
-                    <li><a href="#oracoes">Devocionário</a></li>
-                    <li><a href="#sobre">Nossa Loja</a></li>
-                </ul>
-            </nav>
-            <button class="cart-btn" onclick="alert('Seu carrinho está pronto para receber suas bênçãos!')">🛒 Carrinho (0)</button>
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                LUX <span>CATHOLICA</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="devocionario.html" class="nav-link">Devocionário</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
         </div>
     </header>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">Artigos Sacros e Instrumentos de Fé</div>
-            <h1 class="hero-title">Eleve sua <span>Devoção</span> e Oração</h1>
-            <p class="hero-description">Peças exclusivas em contas de ônix, rubi, metais nobres e acabamento artesanal refinado para transformar seus momentos de fé.</p>
-            <a href="#produtos" class="btn-gold">Explorar Coleção</a>
+            <p class="hero-subtitle">Sacramentalia & Devotio</p>
+            <h1 class="hero-title">Fortaleça sua Fé Diária</h1>
+            <p class="hero-description">Terços artesanais, Bíblias de estudo e artigos religiosos selecionados para elevar sua oração.</p>
+            <a href="#produtos" class="btn-gold">Ver Coleção</a>
         </div>
     </section>
 
-    <section id="produtos">
-        <div class="divider-ornament">✠</div>
-        <h2 class="section-title">Coleção Devocional de Luxo</h2>
-        <p class="section-subtitle">Peças selecionadas com reverência e beleza estética única</p>
+    <section id="produtos" class="section-container">
+        <div class="section-header">
+            <div class="divider-ornament">✠</div>
+            <h2 class="section-title">Coleção Sacra</h2>
+            <p style="color: var(--text-muted);">Artigos produzidos com zelo e devoção</p>
+        </div>
 
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">Mais Vendido</span>
-                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/ea74aaa3584439fe4503275912b79266.jpg" alt="Terço de Contas Pretas">
+                <div class="product-image-box">
+                    <img src="ea74aaa3584439fe4503275912b79266.jpg" alt="Terço Negro de Luxo">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Terço MISTERIUM ÔNIX & OURO</h3>
-                    <p class="product-desc">Terço artesanal feito com contas pretas foscas estilo ônix, entremeios de mármore e crucifixo clássico banhado a ouro.</p>
-                    <div class="product-price-row">
-                        <span class="product-price">R$ 149,90</span>
-                        <button class="btn-add-cart">Comprar</button>
-                    </div>
+                    <span class="product-category">Terços Artesanais</span>
+                    <h3 class="product-title">Terço Madeira Negra & Ouro</h3>
+                    <div class="product-price">R$ 89,90</div>
+                    <a href="https://wa.me/" class="btn-buy" target="_blank">Encomendar via WhatsApp</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">Destaque</span>
-                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/99f914872b73d06f77ad21a6a8b851ce.jpg" alt="Terço de Cristal Vermelho Rubi">
+                <div class="product-image-box">
+                    <img src="a2c51a7b3573a932a285bd8e85d6467.jpg" alt="Terço Cristal e Rosas">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Terço SAGRADO CORAÇÃO RUBI</h3>
-                    <p class="product-desc">Edição especial com cristais facetados em tom vermelho rubi profundo, detalhes dourados e medalha de Nossa Senhora.</p>
-                    <div class="product-price-row">
-                        <span class="product-price">R$ 169,90</span>
-                        <button class="btn-add-cart">Comprar</button>
-                    </div>
+                    <span class="product-category">Terços Artesanais</span>
+                    <h3 class="product-title">Terço Cristais Negros & Rosas</h3>
+                    <div class="product-price">R$ 95,00</div>
+                    <a href="https://wa.me/" class="btn-buy" target="_blank">Encomendar via WhatsApp</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">Exclusivo</span>
-                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/a2c51a7b3573a932a285bd8e85d56467.jpg" alt="Terço de Cristal Negro e Rosas">
+                <div class="product-image-box">
+                    <img src="d25085335091df40024e524dde7ae7f.jpg" alt="Cúpula Nossa Senhora Aparecida">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Terço ROSARIUM SANTA TERESINHA</h3>
-                    <p class="product-desc">Contas em cristal negro brilhante intercaladas com delicadas rosas brancas esculpidas e cruz de São Bento em metal nobre.</p>
-                    <div class="product-price-row">
-                        <span class="product-price">R$ 159,90</span>
-                        <button class="btn-add-cart">Comprar</button>
-                    </div>
+                    <span class="product-category">Imagens & Cúpulas</span>
+                    <h3 class="product-title">Redoma Sagrada N. Sra. Aparecida</h3>
+                    <div class="product-price">R$ 120,00</div>
+                    <a href="https://wa.me/" class="btn-buy" target="_blank">Encomendar via WhatsApp</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">Edição Fina</span>
-                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/a1e18d4bdf2ba82610b8039fe4b0c0bf.jpg" alt="Bíblias Sagradas em Couro">
+                <div class="product-image-box">
+                    <img src="a1e18d4bdf2ba82610b8039fe4b0c0bf.jpg" alt="Bíblias Sagradas Luxo">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Bíblia Sagrada Capa em Couro Fino</h3>
-                    <p class="product-desc">Tradução oficial com gravação em relevo dourado nas opções Preto Nobre, Marrom Clássico e Rosé Nobre. Filos dourados.</p>
-                    <div class="product-price-row">
-                        <span class="product-price">R$ 189,90</span>
-                        <button class="btn-add-cart">Comprar</button>
-                    </div>
+                    <span class="product-category">Edições Especiais</span>
+                    <h3 class="product-title">Bíblia Sagrada Edição Couro</h3>
+                    <div class="product-price">R$ 149,90</div>
+                    <a href="https://wa.me/" class="btn-buy" target="_blank">Encomendar via WhatsApp</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/d250853335091df40024e524dde7ae7f.jpg" alt="Cúpula de Vidro Nossa Senhora Aparecida">
+                <div class="product-image-box">
+                    <img src="99f914872b73d06f77ad21a6a8b851ce.jpg" alt="Terço Vermelho Rubi">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Redoma Sacra APARECIDA EM PÉROLAS</h3>
-                    <p class="product-desc">Imagem ricamente trabalhada em manto negro com cravação de cristais e pérolas sob cúpula de vidro e madeira nobre.</p>
-                    <div class="product-price-row">
-                        <span class="produ
+                    <span class="product-category">Terços Especiais</span>
+                    <h3 class="product-title">Terço Vermelho Rubi Sacro</h3>
+                    <div class="product-price">R$ 98,00</div>
+                    <a href="https://wa.me/" class="btn-buy" target="_blank">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-box">
+                    <img src="6fa3ce2be363aa4ed0f87e89f37543d4.jpg" alt="Bíblias Ave Maria">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Livros & Devocionais</span>
+                    <h3 class="product-title">Bíblia Ave-Maria Floral</h3>
+                    <div class="product-price">R$ 119,00</div>
+                    <a href="https://wa.me/" class="btn-buy" target="_blank">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-logo">LUX CATHOLICA</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                Especialistas em artigos religiosos e sacros de alta qualidade.
+            </p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Lux Catholica. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
