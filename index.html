@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mylena Eletrônicos - A Sua Loja de Tecnologia</title>
+    <title>Mylena Eletrônicos - Tech Store Premium</title>
     
     <style>
+        /* RESET E VARIAVEIS GLORAIS */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,180 +14,314 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
             line-height: 1.6;
         }
 
-        /* Topo e Cabecalho */
+        /* CABECALHO HIGH-TECH */
         header {
-            background-color: #0d1117;
-            color: #ffffff;
+            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+            border-bottom: 2px solid #2ea44f;
+            padding: 35px 20px;
             text-align: center;
-            padding: 30px 20px;
-            border-bottom: 4px solid #2ea44f;
         }
 
         header h1 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         header p {
-            font-size: 15px;
             color: #8b949e;
+            font-size: 15px;
+            margin-top: 5px;
         }
 
-        /* Banner Principal */
-        .banner-container {
-            width: 100%;
-            background-color: #161b22;
-            text-align: center;
-            padding: 20px 10px;
+        .badge-status {
+            display: inline-block;
+            background-color: rgba(46, 164, 79, 0.15);
+            color: #3fb950;
+            border: 1px solid #2ea44f;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
-        .banner-container img {
-            width: 100%;
-            max-width: 900px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Secao Principal de Produtos */
-        main {
-            max-width: 1100px;
-            margin: 30px auto;
+        /* BANNER PRINCIPAL DESTAQUE */
+        .banner-section {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 0 15px;
         }
 
-        .titulo-secao {
+        .banner-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
-            font-size: 24px;
-            color: #0d1117;
-            margin-bottom: 25px;
+        }
+
+        .banner-card img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* CONTAINER PRINCIPAL DE PRODUTOS */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            color: #ffffff;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #2ea44f;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* GRADE DE PRODUTOS EVOLUIDA (SIDE-BY-SIDE EM TELAS GRANDES / ADAPTAVEL NO CELULAR) */
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        /* CARTAO DO PRODUTO (PREMIUM CARD) */
+        .card-produto {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-produto:hover {
+            transform: translateY(-5px);
+            border-color: #2ea44f;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 200px;
+            background-color: #0d1117;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .card-header {
+            margin-bottom: 10px;
+        }
+
+        .card-header h3 {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .card-header .categoria {
+            color: #8b949e;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .grid-produtos {
+        /* ESPECIFICACOES E TAGS INFORMATIVAS */
+        .tags-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            gap: 6px;
+            margin: 10px 0;
         }
 
-        /* Cartoes de Produtos */
-        article.card-produto {
-            background-color: #ffffff;
-            border: 1px solid #e1e4e8;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 260px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        .tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background-color: #21262d;
+            border: 1px solid #30363d;
         }
 
-        article.card-produto img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
+        .tag.sim { color: #3fb950; border-color: rgba(46,164,79,0.3); }
+        .tag.nao { color: #f85149; border-color: rgba(248,81,73,0.3); }
+        .tag.info { color: #58a6ff; border-color: rgba(88,166,255,0.3); }
+
+        .descricao-produto {
+            font-size: 13px;
+            color: #8b949e;
             margin-bottom: 15px;
-            display: block;
+            border-top: 1px solid #21262d;
+            padding-top: 10px;
         }
 
-        article.card-produto h3 {
-            font-size: 18px;
-            color: #24292e;
-            margin-bottom: 10px;
+        .especificacoes-lista {
+            list-style: none;
+            font-size: 12px;
+            margin-bottom: 15px;
+            background-color: #0d1117;
+            padding: 10px;
+            border-radius: 8px;
         }
 
-        article.card-produto .preco {
+        .especificacoes-lista li {
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .especificacoes-lista li span {
+            color: #8b949e;
+        }
+
+        .especificacoes-lista li strong {
+            color: #c9d1d9;
+        }
+
+        /* PRECO E BOTAO */
+        .preco-box {
+            margin-top: 10px;
+            border-top: 1px solid #30363d;
+            padding-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .preco-box .valor {
+            color: #3fb950;
             font-size: 22px;
-            font-weight: bold;
-            color: #2ea44f;
-            margin-bottom: 15px;
+            font-weight: 800;
         }
 
-        article.card-produto button {
+        .btn-comprar {
             background-color: #2ea44f;
             color: #ffffff;
             border: none;
-            padding: 12px 15px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 8px;
             cursor: pointer;
-            width: 100%;
+            transition: background-color 0.2s;
         }
 
-        /* Destaques e Beneficios */
-        .secao-diferenciais {
-            background-color: #ffffff;
-            border-top: 1px solid #e1e4e8;
-            border-bottom: 1px solid #e1e4e8;
-            padding: 30px 20px;
-            margin-top: 40px;
+        .btn-comprar:hover {
+            background-color: #2c974b;
         }
 
-        .container-diferenciais {
-            max-width: 900px;
+        /* SECAO DE BENEFICIOS */
+        .diferenciais-section {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            border-bottom: 1px solid #30363d;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .diferenciais-grid {
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            gap: 30px;
             text-align: center;
-            gap: 20px;
         }
 
-        .item-diferencial {
+        .diferencial-item {
             flex: 1;
-            min-width: 200px;
+            min-width: 220px;
         }
 
-        .item-diferencial img {
-            width: 50px;
-            height: 50px;
+        .diferencial-item img {
+            width: 48px;
+            height: 48px;
             object-fit: contain;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .item-diferencial h4 {
+        .diferencial-item h4 {
+            color: #ffffff;
             font-size: 16px;
-            color: #0d1117;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
-        .item-diferencial p {
+        .diferencial-item p {
             font-size: 13px;
-            color: #586069;
-        }
-
-        /* Rodape */
-        footer {
-            background-color: #0d1117;
             color: #8b949e;
+        }
+
+        /* RODAPE PRO */
+        footer {
+            background-color: #010409;
+            border-top: 1px solid #21262d;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px 20px;
             font-size: 14px;
-            margin-top: 30px;
+            color: #8b949e;
         }
 
-        footer p {
-            margin-bottom: 10px;
+        footer strong {
+            color: #ffffff;
         }
 
-        footer img {
-            width: 22px;
-            height: 22px;
-            vertical-align: middle;
-            margin-right: 8px;
+        .contato-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .contato-whatsapp img {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
@@ -194,62 +329,139 @@
 
     <header>
         <h1>Mylena Eletrônicos</h1>
-        <p>A sua loja de tecnologia, celulares e acessórios em Chopinzinho</p>
+        <p>A sua loja de tecnologia de alta performance em Chopinzinho</p>
+        <div class="badge-status">⚡ Loja Verificada & Entrega Rápida</div>
     </header>
 
-    <section class="banner-container">
-        <img src="691c428496997bcd2783ccc1820ad2d6.jpg" alt="Banner Oficial Mylena Eletrônicos">
+    <section class="banner-section">
+        <div class="banner-card">
+            <img src="691c428496997bcd2783ccc1820ad2d6.jpg" alt="Mylena Eletrônicos Banner Pro">
+        </div>
     </section>
 
     <main>
-        <h2 class="titulo-secao">Produtos em Destaque</h2>
+        <h2 class="section-title">Catálogo de Produtos</h2>
         
         <div class="grid-produtos">
             
             <article class="card-produto">
-                <img src="e3e66e45dd20cc71d7b8752b483ede12.jpg" alt="Smartphone High-Tech">
-                <h3>Smartphone High-Tech</h3>
-                <p class="preco">R$ 1.899,00</p>
-                <button type="button">Comprar Agora</button>
+                <div>
+                    <div class="img-container">
+                        <img src="e3e66e45dd20cc71d7b8752b483ede12.jpg" alt="Smartphone High-Tech">
+                    </div>
+                    <div class="card-header">
+                        <span class="categoria">Smartphones</span>
+                        <h3>Smartphone High-Tech 128GB</h3>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag sim">💧 Resistente à Água (IP68)</span>
+                        <span class="tag info">📱 Tela 120Hz</span>
+                        <span class="tag info">🔋 5000 mAh</span>
+                    </div>
+
+                    <p class="descricao-produto">
+                        Smartphone de altíssimo desempenho ideal para jogos e fotografia. Conta com sistema de câmera tripla avançado e carregamento ultra-rápido.
+                    </p>
+
+                    <ul class="especificacoes-lista">
+                        <li><span>Processador:</span> <strong>Octa-Core 2.8GHz</strong></li>
+                        <li><span>Pode Molhar?</span> <strong>Resiste a respingos/chuva</strong></li>
+                        <li><span>Conectividade:</span> <strong>5G + Wi-Fi 6</strong></li>
+                        <li><span>Garantia:</span> <strong>12 meses de fábrica</strong></li>
+                    </ul>
+                </div>
+
+                <div class="preco-box">
+                    <span class="valor">R$ 1.899,00</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
             </article>
 
             <article class="card-produto">
-                <img src="ad22fbced8453477150a3076cd49267f.jpg" alt="Fone Bluetooth Pro">
-                <h3>Fone Bluetooth Pro</h3>
-                <p class="preco">R$ 249,00</p>
-                <button type="button">Comprar Agora</button>
+                <div>
+                    <div class="img-container">
+                        <img src="ad22fbced8453477150a3076cd49267f.jpg" alt="Fone Bluetooth Pro">
+                    </div>
+                    <div class="card-header">
+                        <span class="categoria">Áudio & Acessórios</span>
+                        <h3>Fone Bluetooth Pro Noise-Canceling</h3>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag sim">🎧 Cancelamento de Ruído</span>
+                        <span class="tag sim">💦 Resistente a Suor (IPX4)</span>
+                        <span class="tag nao">🚫 Não Submergir na Água</span>
+                    </div>
+
+                    <p class="descricao-produto">
+                        Isolamento acústico inteligente que anula barulhos externos para você focar nas suas músicas e chamadas. Áudio HD com graves profundos.
+                    </p>
+
+                    <ul class="especificacoes-lista">
+                        <li><span>Bateria:</span> <strong>Até 24h com a case</strong></li>
+                        <li><span>Isolamento Ruído:</span> <strong>Ativo (ANC)</strong></li>
+                        <li><span>Uso em Treinos:</span> <strong>Sim (Resiste ao suor)</strong></li>
+                        <li><span>Conexão:</span> <strong>Bluetooth 5.3</strong></li>
+                    </ul>
+                </div>
+
+                <div class="preco-box">
+                    <span class="valor">R$ 249,00</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
             </article>
 
             <article class="card-produto">
-                <img src="7db2ac993e53182c9a1a1f651f86fef0.jpg" alt="Smartwatch Sport">
-                <h3>Smartwatch Sport</h3>
-                <p class="preco">R$ 399,00</p>
-                <button type="button">Comprar Agora</button>
-            </article>
+                <div>
+                    <div class="img-container">
+                        <img src="7db2ac993e53182c9a1a1f651f86fef0.jpg" alt="Smartwatch Sport">
+                    </div>
+                    <div class="card-header">
+                        <span class="categoria">Wearables</span>
+                        <h3>Smartwatch Sport Fitness Tracker</h3>
+                    </div>
 
-            <article class="card-produto">
-                <img src="b488acd8b32869e8604e650f4789a37.jpg" alt="Teclado Gamer Mecanico">
-                <h3>Teclado Mecânico</h3>
-                <p class="preco">R$ 199,00</p>
-                <button type="button">Comprar Agora</button>
+                    <div class="tags-container">
+                        <span class="tag sim">🏊 Prova d'Água (50m)</span>
+                        <span class="tag info">❤️ Monitor Cardíaco</span>
+                        <span class="tag info">🏃 15 Modos Treino</span>
+                    </div>
+
+                    <p class="descricao-produto">
+                        Relógio inteligente completo para acompanhar seus treinos, qualidade do sono e notificações do celular diretamente no pulso.
+                    </p>
+
+                    <ul class="especificacoes-lista">
+                        <li><span>Pode Nao Molhar?</span> <strong>Pode nadar/tomar banho</strong></li>
+                        <li><span>Autonomia:</span> <strong>7 a 10 dias de uso</strong></li>
+                        <li><span>Compatibilidade:</span> <strong>Android & iOS</strong></li>
+                        <li><span>Sensores:</span> <strong>GPS + SpO2 + BPM</strong></li>
+                    </ul>
+                </div>
+
+                <div class="preco-box">
+                    <span class="valor">R$ 399,00</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
             </article>
 
         </div>
     </main>
 
-    <section class="secao-diferenciais">
-        <div class="container-diferenciais">
+    <section class="diferenciais-section">
+        <div class="diferenciais-grid">
             
-            <div class="item-diferencial">
+            <div class="diferencial-item">
                 <img src="a8b05fcb1fc67c4077e0b68908859071.jpg" alt="Garantia Oficial">
-                <h4>Garantia Oficial</h4>
-                <p>Todos os produtos possuem garantia de até 12 meses.</p>
+                <h4>Garantia Total</h4>
+                <p>Todos os produtos acompanham Nota Fiscal e garantia contra defeitos.</p>
             </div>
 
-            <div class="item-diferencial">
-                <img src="c2e3aa3a6acbbfef1ab09d62e0859479.jpg" alt="Entrega Rapida">
-                <h4>Entrega Rápida</h4>
-                <p>Enviamos para todo o Brasil com rastreamento.</p>
+            <div class="diferencial-item">
+                <img src="c2e3aa3a6acbbfef1ab09d62e0859479.jpg" alt="Entrega Expressa">
+                <h4>Envio Rápido e Seguro</h4>
+                <p>Postagem rápida com código de rastreio direto no seu e-mail.</p>
             </div>
 
         </div>
@@ -257,12 +469,15 @@
 
     <footer>
         <p><strong>Mylena Eletrônicos</strong> - Chopinzinho, Paraná</p>
-        <p>
-            <img src="f798d4ded0550722e9a86998bc68cc02.png" alt="WhatsApp">
-            Atendimento via WhatsApp: (46) 99900-0000
-        </p>
-        <p style="margin-top: 15px; font-size: 12px; color: #586069;">&copy; Todos os direitos reservados.</p>
+        
+        <div class="contato-whatsapp">
+            <img src="f798d4ded0550722e9a86998bc68cc02.jpg" alt="WhatsApp Icon">
+            <span>Atendimento: (46) 99900-0000</span>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 12px; color: #484f58;">&copy; 2026 Mylena Eletrônicos. Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
+
