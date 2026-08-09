@@ -3,107 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore - Eletrônicos</title>
-</head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa;">
+    <title>Mylena Eletrônicos - A Sua Loja de Tecnologia</title>
+    
+    <style>
+        /* Configuracoes Gerais da Pagina */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <header style="background-color: #333; color: white; padding: 15px; text-align: center;">
-        <h1 style="margin: 0;">TechStore</h1>
-        <nav style="margin-top: 10px;">
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px;">
-                <li><a href="#home" style="color: white; text-decoration: none;">Início</a></li>
-                <li><a href="#produtos" style="color: white; text-decoration: none;">Produtos</a></li>
-                <li><a href="#contato" style="color: white; text-decoration: none;">Contato</a></li>
-            </ul>
-        </nav>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            line-height: 1.6;
+        }
+
+        /* Topo e Cabecalho */
+        header {
+            background-color: #0d1117;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 4px solid #2ea44f;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #8b949e;
+        }
+
+        /* Banner Principal */
+        .banner-container {
+            width: 100%;
+            background-color: #161b22;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .banner-container img {
+            width: 90%;
+            max-width: 950px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Secao Principal de Produtos */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 26px;
+            color: #0d1117;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        /* Cartoes de Produtos */
+        article.card-produto {
+            background-color: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 10px;
+            width: 230px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        article.card-produto img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        article.card-produto h3 {
+            font-size: 18px;
+            color: #24292e;
+            margin-bottom: 10px;
+        }
+
+        article.card-produto .preco {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2ea44f;
+            margin-bottom: 15px;
+        }
+
+        article.card-produto button {
+            background-color: #2ea44f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Destaques e Beneficios */
+        .secao-diferenciais {
+            background-color: #ffffff;
+            border-top: 1px solid #e1e4e8;
+            border-bottom: 1px solid #e1e4e8;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .container-diferenciais {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .item-diferencial {
+            margin: 15px;
+        }
+
+        .item-diferencial img {
+            width: 45px;
+            height: 45px;
+            margin-bottom: 8px;
+        }
+
+        .item-diferencial p {
+            font-weight: bold;
+            font-size: 16px;
+            color: #24292e;
+        }
+
+        /* Rodape */
+        footer {
+            background-color: #0d1117;
+            color: #8b949e;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer img {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mylena Eletrônicos</h1>
+        <p>A sua loja de tecnologia, celulares e acessorios em Chopinzinho</p>
     </header>
 
+    <section class="banner-container">
+        <img src="691c4284b3d7a87e3be7ff5918873099.jpg" alt="Banner Oficial Mylena Eletrônicos">
+    </section>
+
     <main>
-        <section id="home" style="text-align: center; padding-bottom: 20px;">
-            <img src="691c428496997bcd2783ccc1820ad2d6.jpg" alt="Banner principal TechStore" style="width: 100%; height: 250px; object-fit: cover; display: block;">
-            <h2 style="margin-top: 20px;">Bem-vindo à sua nova loja de tecnologia!</h2>
-            <p>Encontre os melhores smartphones, notebooks e acessórios do mercado.</p>
-        </section>
-
-        <section id="produtos" style="padding: 20px; text-align: center;">
-            <h2>Produtos em Destaque</h2>
+        <h2 class="titulo-secao">Produtos em Destaque</h2>
+        
+        <div class="grid-produtos">
             
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
-                    <img src="e3e66e45dd20cc71d7b8752b483ede12.jpg" alt="Smartphone" style="max-width: 120px; height: 120px; object-fit: contain;">
-                    <h3>Smartphone Ultra</h3>
-                    <p><strong>R$ 2.499,00</strong></p>
-                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
-                </article>
+            <article class="card-produto">
+                <img src="691c4284b3d7a87e3be7ff5918873099.jpg" alt="Smartphone High-Tech">
+                <h3>Smartphone High-Tech</h3>
+                <p class="preco">R$ 1.899,00</p>
+                <button type="button">Comprar Agora</button>
+            </article>
 
-                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
-                    <img src="57e9055f14c78da159f22cea5b27906c.jpg" alt="Notebook" style="max-width: 120px; height: 120px; object-fit: contain;">
-                    <h3>Notebook Pro</h3>
-                    <p><strong>R$ 4.899,00</strong></p>
-                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
-                </article>
+            <article class="card-produto">
+                <img src="5a68d067e27ddb019bda3a7935fb31aa.jpg" alt="Fone Bluetooth Pro">
+                <h3>Fone Bluetooth Pro</h3>
+                <p class="preco">R$ 249,00</p>
+                <button type="button">Comprar Agora</button>
+            </article>
 
-                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
-                    <img src="7db2ac993e53182c9a1a1f651f86fef0.jpg" alt="Smartwatch" style="max-width: 120px; height: 120px; object-fit: contain;">
-                    <h3>Smartwatch Fit</h3>
-                    <p><strong>R$ 399,00</strong></p>
-                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
-                </article>
+            <article class="card-produto">
+                <img src="a1a10dfbe22f2cb8cc5ae64b73e5bf02.jpg" alt="Tablet Ultrafino 10">
+                <h3>Tablet Ultrafino 10"</h3>
+                <p class="preco">R$ 1.299,00</p>
+                <button type="button">Comprar Agora</button>
+            </article>
 
-                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
-                    <img src="ad22fbced8453477150a3076cd49267f.jpg" alt="Fone Bluetooth" style="max-width: 120px; height: 120px; object-fit: contain;">
-                    <h3>Headphone Bass</h3>
-                    <p><strong>R$ 250,00</strong></p>
-                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
-                </article>
-            </div>
-        </section>
+            <article class="card-produto">
+                <img src="b488acd8b3c2869e8604e650f4789a37.jpg" alt="Teclado Gamer Mecanico">
+                <h3>Teclado Mecânico</h3>
+                <p class="preco">R$ 199,00</p>
+                <button type="button">Comprar Agora</button>
+            </article>
 
-        <section id="diferenciais" style="background: white; padding: 20px; margin-top: 20px; text-align: center;">
-            <h2>Por que escolher nossa loja?</h2>
-            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-                <div>
-                    <img src="a8b05fcb1fc67c4077e0b68908859071.jpg" alt="Selo Garantia" style="width: 60px;">
-                    <h3>Garantia Oficial</h3>
-                    <p style="max-width: 250px;">Todos os produtos acompanham nota fiscal e garantia de até 12 meses.</p>
-                </div>
-                <div>
-                    <img src="c2c3aa3a6acbbfef1ab09d62c0859479.jpg" alt="Caminhão Entrega" style="width: 60px;">
-                    <h3>Entrega Rápida</h3>
-                    <p style="max-width: 250px;">Enviamos para todo o Brasil com rastreamento em tempo real.</p>
-                </div>
-            </div>
-        </section>
-
-        <img src="b488acd8b3c2869e8604e650f4789a37.jpg" alt="Design Teclado Tech" style="width: 100%; height: 200px; object-fit: cover; margin-top: 20px; display: block;">
-
-        <section id="contato" style="padding: 20px; background: white; text-align: center;">
-            
-            <div style="background: #e9ecef; padding: 15px; border-radius: 8px; max-width: 400px; margin: 0 auto 30px auto;">
-                <img src="31ed22dc58062278c1a295d6be03c967.jpg" alt="Logo Pix" style="width: 80px; margin-bottom: 10px;">
-                <h3 style="margin: 0;">Pagamento Instantâneo</h3>
-                <p><strong>Chave PIX (CNPJ):</strong> 00.000.000/0001-00</p>
-                <p>Pague no PIX e ganhe 10% de desconto!</p>
-            </div>
-
-            <div>
-                <h2>Fale Conosco</h2>
-                <p>Tem dúvidas? Nossa equipe atende de Seg a Sex, das 09h às 18h.</p>
-                
-                <a href="https://wa.me/5511900000000" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px;">
-                    <img src="f798d4ded0550722e9a86998bc68cc02.jpg" alt="WhatsApp" style="width: 30px; border-radius: 50%;">
-                    (11) 90000-0000
-                </a>
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 20px;">
-        <p><strong>Razão Social:</strong> TechStore Eletrônicos LTDA (Fictício)</p>
-        <p>&copy; 2026 Todos os direitos reservados.</p>
+    <section class="secao-diferenciais">
+        <div class="container-diferenciais">
+            
+            <div class="item-diferencial">
+                <img src="c2c3aa3a6acbbfef1ab09d62e0859479.jpg" alt="Entrega Rapida">
+                <p>Entrega Rápida</p>
+            </div>
+
+            <div class="item-diferencial">
+                <img src="31ed22dc58062278c1a295d6be03c967.jpg" alt="Desconto no Pix">
+                <p>Desconto no Pix</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Mylena Eletrônicos</strong> - Chopinzinho, Paraná</p>
+        <p>
+            <img src="f798d4ded0550722e9a86998bc68cc02.jpg" alt="WhatsApp">
+            Atendimento via WhatsApp: (46) 99900-0000
+        </p>
+        <p style="margin-top: 15px; font-size: 12px; color: #586069;">&copy; Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
-
