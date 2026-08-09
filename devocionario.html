@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devocionário & Orações | Lux Catholica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --accent-red: #8b0000;
+            --accent-red-bright: #b22222;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 20px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-decoration: none;
+        }
+
+        .brand-logo span { color: var(--accent-red-bright); }
+
+        .btn-back {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            border: 1px solid var(--gold-primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .divider-ornament {
+            text-align: center;
+            color: var(--accent-red-bright);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .prayer-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 12px 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-red);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+        }
+
+        .prayer-box {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-dark);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+            display: none;
+        }
+
+        .prayer-box.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .prayer-box h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .prayer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            font-style: italic;
+            white-space: pre-line;
+        }
+
+        footer {
+            background: #050505;
+            border-top: 1px solid var(--border-color);
+            padding: 30px 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">LUX <span>CATHOLICA</span></a>
+            <a href="index.html" class="btn-back">← Voltar para a Loja</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="divider-ornament">✠</div>
+        <h1 class="page-title">Devocionário de Oração</h1>
+        <p class="page-subtitle">Pausa e reflexão para alimentar a sua alma no dia a dia</p>
+
+        <div class="prayer-tabs">
+            <button class="tab-btn active" onclick="openPrayer('ave-maria', event)">Ave Maria</button>
+            <button class="tab-btn" onclick="openPrayer('pai-nosso', event)">Pai Nosso</button>
+            <button class="tab-btn" onclick="openPrayer('vinde-espirito', event)">Vinde Espírito Santo</button>
+            <button class="tab-btn" onclick="openPrayer('cruz-sagrada', event)">Cruz Sagrada (São Bento)</button>
+        </div>
+
+        <div id="ave-maria" class="prayer-box active">
+            <h3>Oração da Ave Maria</h3>
+            <div class="prayer-text">
+"Ave Maria, cheia de graça, o Senhor é convosco,
+bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus.
+
+Santa Maria, Mãe de Deus,
+rogai por nós pecadores,
+agora e na hora da nossa morte.
+Amém."
+            </div>
+        </div>
+
+        <div id="pai-nosso" class="prayer-box">
+            <h3>Oração do Pai Nosso</h3>
+            <div class="prayer-text">
+"Pai Nosso que estais nos Céus, santificado seja o vosso Nome,
+venha a nós o vosso Reino, seja feita a vossa vontade assim na terra como no céu.
+
+O pão nosso de cada dia nos dai hoje,
+perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tem ofendido,
+e não nos deixeis cair em tentação, mas livrai-nos do Mal.
+Amém."
+            </div>
+        </div>
+
+        <div id="vinde-espirito" class="prayer-box">
+            <h3>Oração ao Espírito Santo</h3>
+            <div class="prayer-text">
+"Vinde, Espírito Santo, enchei os corações dos vossos fiéis
+e acendei neles o fogo do vosso Amor.
+Enviai o vosso Espírito e tudo será criado,
+e renovareis a face da terra.
+
+Ó Deus, que instruístes os corações dos vossos fiéis com a luz do Espírito Santo,
+fazei que apreciemos retamente todas as coisas segundo o mesmo Espírito
+e gozemos sempre da sua consolação.
+Por Cristo, Senhor Nosso. Amém."
+            </div>
+        </div>
+
+        <div id="cruz-sagrada" class="prayer-box">
+            <h3>Oração da Cruz Sagrada de São Bento</h3>
+            <div class="prayer-text">
+"A Cruz Sagrada seja a minha luz,
+não seja o dragão meu guia.
+Retira-te, Satanás!
+Nunca me aconselhes coisas vãs.
+É mau o que tu me ofereces,
+bebe tu mesmo o teu veneno!
+
+Em nome do Pai, do Filho e do Espírito Santo.
+Amém."
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Lux Catholica - Devocionário Sacro.
+    </footer>
+
+    <script>
+        function openPrayer(prayerId, evt) {
+            var boxes = document.querySelectorAll('.prayer-box');
+            boxes.forEach(function(box) { box.classList.remove('active'); });
+
+            var buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(function(btn) { btn.classList.remove('active'); });
+
+            document.getElementById(prayerId).classList.add('active');
+            if (evt) evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
