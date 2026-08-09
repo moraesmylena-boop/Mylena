@@ -3,481 +3,602 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mylena Eletrônicos - Tech Store Premium</title>
-    
+    <title>Lux Catholica | Artigos Sacros & Devocionais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        /* RESET E VARIAVEIS GLORAIS */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1c1c1c;
+            --accent-red: #8b0000;
+            --accent-red-bright: #b22222;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* CABECALHO HIGH-TECH */
-        header {
-            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-            border-bottom: 2px solid #2ea44f;
-            padding: 35px 20px;
+        /* Tipografia */
+        h1, h2, h3, h4, .brand-logo {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #050505, var(--accent-red), #050505);
+            color: var(--gold-light);
             text-align: center;
-        }
-
-        header h1 {
-            color: #ffffff;
-            font-size: 32px;
-            font-weight: 800;
+            padding: 8px 15px;
+            font-size: 0.85rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            border-bottom: 1px solid var(--gold-dark);
+            font-weight: 500;
         }
 
-        header p {
-            color: #8b949e;
-            font-size: 15px;
-            margin-top: 5px;
+        /* Cabeçalho / Navegação */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
         }
 
-        .badge-status {
-            display: inline-block;
-            background-color: rgba(46, 164, 79, 0.15);
-            color: #3fb950;
-            border: 1px solid #2ea44f;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        /* BANNER PRINCIPAL DESTAQUE */
-        .banner-section {
+        .header-container {
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 15px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
         }
 
-        .banner-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .brand-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .brand-logo span {
+            color: var(--accent-red-bright);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold-primary);
+        }
+
+        .cart-btn {
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+        }
+
+        /* Banner Principal (Hero) */
+        .hero {
+            position: relative;
+            height: 75vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.85)), 
+                        url('https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/c50ed4bebc2a049bebe215bc468b9cac.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            border-bottom: 2px solid var(--gold-primary);
+            padding: 0 20px;
         }
 
-        .banner-card img {
-            width: 100%;
-            max-height: 380px;
-            object-fit: cover;
-            display: block;
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
         }
 
-        /* CONTAINER PRINCIPAL DE PRODUTOS */
-        main {
+        .hero-subtitle {
+            color: var(--gold-light);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-title span {
+            color: var(--gold-primary);
+        }
+
+        .hero-description {
+            color: #d0d0d0;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--bg-dark);
+            padding: 14px 32px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        }
+
+        /* Seções */
+        section {
+            padding: 70px 20px;
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 15px;
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 26px;
-            color: #ffffff;
-            margin-bottom: 35px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #2ea44f;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        /* GRADE DE PRODUTOS EVOLUIDA (SIDE-BY-SIDE EM TELAS GRANDES / ADAPTAVEL NO CELULAR) */
-        .grid-produtos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            justify-content: center;
-        }
-
-        /* CARTAO DO PRODUTO (PREMIUM CARD) */
-        .card-produto {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 14px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .card-produto:hover {
-            transform: translateY(-5px);
-            border-color: #2ea44f;
-        }
-
-        .img-container {
-            width: 100%;
-            height: 200px;
-            background-color: #0d1117;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            padding: 10px;
-        }
-
-        .img-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card-header {
+            font-size: 2.2rem;
+            color: var(--gold-primary);
             margin-bottom: 10px;
         }
 
-        .card-header h3 {
-            color: #ffffff;
-            font-size: 20px;
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+
+        .divider-ornament {
+            text-align: center;
+            color: var(--accent-red-bright);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Grid de Produtos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8), 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-red);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .product-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--gold-primary);
             font-weight: 700;
         }
 
-        .card-header .categoria {
-            color: #8b949e;
-            font-size: 12px;
+        .btn-add-cart {
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 8px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: all 0.3s;
         }
 
-        /* ESPECIFICACOES E TAGS INFORMATIVAS */
-        .tags-container {
+        .btn-add-cart:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+        }
+
+        /* Seção de Orações Interativa */
+        .prayers-section {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #110808 50%, var(--bg-dark) 100%);
+            border-top: 1px solid rgba(139, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+            padding: 80px 20px;
+            margin: 40px 0;
+        }
+
+        .prayer-tabs {
             display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 10px 0;
-        }
-
-        .tag {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-        }
-
-        .tag.sim { color: #3fb950; border-color: rgba(46,164,79,0.3); }
-        .tag.nao { color: #f85149; border-color: rgba(248,81,73,0.3); }
-        .tag.info { color: #58a6ff; border-color: rgba(88,166,255,0.3); }
-
-        .descricao-produto {
-            font-size: 13px;
-            color: #8b949e;
-            margin-bottom: 15px;
-            border-top: 1px solid #21262d;
-            padding-top: 10px;
-        }
-
-        .especificacoes-lista {
-            list-style: none;
-            font-size: 12px;
-            margin-bottom: 15px;
-            background-color: #0d1117;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        .especificacoes-lista li {
-            margin-bottom: 4px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .especificacoes-lista li span {
-            color: #8b949e;
-        }
-
-        .especificacoes-lista li strong {
-            color: #c9d1d9;
-        }
-
-        /* PRECO E BOTAO */
-        .preco-box {
-            margin-top: 10px;
-            border-top: 1px solid #30363d;
-            padding-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .preco-box .valor {
-            color: #3fb950;
-            font-size: 22px;
-            font-weight: 800;
-        }
-
-        .btn-comprar {
-            background-color: #2ea44f;
-            color: #ffffff;
-            border: none;
-            padding: 10px 18px;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .btn-comprar:hover {
-            background-color: #2c974b;
-        }
-
-        /* SECAO DE BENEFICIOS */
-        .diferenciais-section {
-            background-color: #161b22;
-            border-top: 1px solid #30363d;
-            border-bottom: 1px solid #30363d;
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        .diferenciais-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-            text-align: center;
-        }
-
-        .diferencial-item {
-            flex: 1;
-            min-width: 220px;
-        }
-
-        .diferencial-item img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            margin-bottom: 12px;
-        }
-
-        .diferencial-item h4 {
-            color: #ffffff;
-            font-size: 16px;
-            margin-bottom: 6px;
-        }
-
-        .diferencial-item p {
-            font-size: 13px;
-            color: #8b949e;
-        }
-
-        /* RODAPE PRO */
-        footer {
-            background-color: #010409;
-            border-top: 1px solid #21262d;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 14px;
-            color: #8b949e;
-        }
-
-        footer strong {
-            color: #ffffff;
-        }
-
-        .contato-whatsapp {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            gap: 8px;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            padding: 8px 16px;
-            border-radius: 20px;
-            color: #ffffff;
-            font-weight: 600;
-            margin-top: 12px;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
         }
 
-        .contato-whatsapp img {
-            width: 20px;
-            height: 20px;
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 12px 22px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-red);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+        }
+
+        .prayer-box {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-dark);
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+            display: none;
+        }
+
+        .prayer-box.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .prayer-box h3 {
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .prayer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            font-style: italic;
+            white-space: pre-line;
+        }
+
+        /* Informações e Localização */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .info-card h3 {
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #050505;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 600px;
+            margin: 15px auto;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 30px;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
+    <div class="top-bar">
+        ✦ Entregas Abençoadas para Todo o Brasil • Pagamento via PIX com 5% de Desconto ✦
+    </div>
+
     <header>
-        <h1>Mylena Eletrônicos</h1>
-        <p>A sua loja de tecnologia de alta performance em Chopinzinho</p>
-        <div class="badge-status">⚡ Loja Verificada & Entrega Rápida</div>
+        <div class="header-container">
+            <a href="#" class="brand-logo">LUX <span>CATHOLICA</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Coleção</a></li>
+                    <li><a href="#oracoes">Devocionário</a></li>
+                    <li><a href="#sobre">Nossa Loja</a></li>
+                </ul>
+            </nav>
+            <button class="cart-btn" onclick="alert('Seu carrinho está pronto para receber suas bênçãos!')">🛒 Carrinho (0)</button>
+        </div>
     </header>
 
-    <section class="banner-section">
-        <div class="banner-card">
-            <img src="691c428496997bcd2783ccc1820ad2d6.jpg" alt="Mylena Eletrônicos Banner Pro">
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Artigos Sacros e Instrumentos de Fé</div>
+            <h1 class="hero-title">Eleve sua <span>Devoção</span> e Oração</h1>
+            <p class="hero-description">Peças exclusivas em contas de ônix, rubi, metais nobres e acabamento artesanal refinado para transformar seus momentos de fé.</p>
+            <a href="#produtos" class="btn-gold">Explorar Coleção</a>
         </div>
     </section>
 
-    <main>
-        <h2 class="section-title">Catálogo de Produtos</h2>
-        
-        <div class="grid-produtos">
-            
-            <article class="card-produto">
-                <div>
-                    <div class="img-container">
-                        <img src="e3e66e45dd20cc71d7b8752b483ede12.jpg" alt="Smartphone High-Tech">
-                    </div>
-                    <div class="card-header">
-                        <span class="categoria">Smartphones</span>
-                        <h3>Smartphone High-Tech 128GB</h3>
-                    </div>
+    <section id="produtos">
+        <div class="divider-ornament">✠</div>
+        <h2 class="section-title">Coleção Devocional de Luxo</h2>
+        <p class="section-subtitle">Peças selecionadas com reverência e beleza estética única</p>
 
-                    <div class="tags-container">
-                        <span class="tag sim">💧 Resistente à Água (IP68)</span>
-                        <span class="tag info">📱 Tela 120Hz</span>
-                        <span class="tag info">🔋 5000 mAh</span>
-                    </div>
-
-                    <p class="descricao-produto">
-                        Smartphone de altíssimo desempenho ideal para jogos e fotografia. Conta com sistema de câmera tripla avançado e carregamento ultra-rápido.
-                    </p>
-
-                    <ul class="especificacoes-lista">
-                        <li><span>Processador:</span> <strong>Octa-Core 2.8GHz</strong></li>
-                        <li><span>Pode Molhar?</span> <strong>Resiste a respingos/chuva</strong></li>
-                        <li><span>Conectividade:</span> <strong>5G + Wi-Fi 6</strong></li>
-                        <li><span>Garantia:</span> <strong>12 meses de fábrica</strong></li>
-                    </ul>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-tag">Mais Vendido</span>
+                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/ea74aaa3584439fe4503275912b79266.jpg" alt="Terço de Contas Pretas">
                 </div>
-
-                <div class="preco-box">
-                    <span class="valor">R$ 1.899,00</span>
-                    <button class="btn-comprar">Comprar</button>
+                <div class="product-info">
+                    <h3 class="product-title">Terço MISTERIUM ÔNIX & OURO</h3>
+                    <p class="product-desc">Terço artesanal feito com contas pretas foscas estilo ônix, entremeios de mármore e crucifixo clássico banhado a ouro.</p>
+                    <div class="product-price-row">
+                        <span class="product-price">R$ 149,90</span>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
                 </div>
-            </article>
-
-            <article class="card-produto">
-                <div>
-                    <div class="img-container">
-                        <img src="ad22fbced8453477150a3076cd49267f.jpg" alt="Fone Bluetooth Pro">
-                    </div>
-                    <div class="card-header">
-                        <span class="categoria">Áudio & Acessórios</span>
-                        <h3>Fone Bluetooth Pro Noise-Canceling</h3>
-                    </div>
-
-                    <div class="tags-container">
-                        <span class="tag sim">🎧 Cancelamento de Ruído</span>
-                        <span class="tag sim">💦 Resistente a Suor (IPX4)</span>
-                        <span class="tag nao">🚫 Não Submergir na Água</span>
-                    </div>
-
-                    <p class="descricao-produto">
-                        Isolamento acústico inteligente que anula barulhos externos para você focar nas suas músicas e chamadas. Áudio HD com graves profundos.
-                    </p>
-
-                    <ul class="especificacoes-lista">
-                        <li><span>Bateria:</span> <strong>Até 24h com a case</strong></li>
-                        <li><span>Isolamento Ruído:</span> <strong>Ativo (ANC)</strong></li>
-                        <li><span>Uso em Treinos:</span> <strong>Sim (Resiste ao suor)</strong></li>
-                        <li><span>Conexão:</span> <strong>Bluetooth 5.3</strong></li>
-                    </ul>
-                </div>
-
-                <div class="preco-box">
-                    <span class="valor">R$ 249,00</span>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </article>
-
-            <article class="card-produto">
-                <div>
-                    <div class="img-container">
-                        <img src="7db2ac993e53182c9a1a1f651f86fef0.jpg" alt="Smartwatch Sport">
-                    </div>
-                    <div class="card-header">
-                        <span class="categoria">Wearables</span>
-                        <h3>Smartwatch Sport Fitness Tracker</h3>
-                    </div>
-
-                    <div class="tags-container">
-                        <span class="tag sim">🏊 Prova d'Água (50m)</span>
-                        <span class="tag info">❤️ Monitor Cardíaco</span>
-                        <span class="tag info">🏃 15 Modos Treino</span>
-                    </div>
-
-                    <p class="descricao-produto">
-                        Relógio inteligente completo para acompanhar seus treinos, qualidade do sono e notificações do celular diretamente no pulso.
-                    </p>
-
-                    <ul class="especificacoes-lista">
-                        <li><span>Pode Nao Molhar?</span> <strong>Pode nadar/tomar banho</strong></li>
-                        <li><span>Autonomia:</span> <strong>7 a 10 dias de uso</strong></li>
-                        <li><span>Compatibilidade:</span> <strong>Android & iOS</strong></li>
-                        <li><span>Sensores:</span> <strong>GPS + SpO2 + BPM</strong></li>
-                    </ul>
-                </div>
-
-                <div class="preco-box">
-                    <span class="valor">R$ 399,00</span>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </article>
-
-        </div>
-    </main>
-
-    <section class="diferenciais-section">
-        <div class="diferenciais-grid">
-            
-            <div class="diferencial-item">
-                <img src="a8b05fcb1fc67c4077e0b68908859071.jpg" alt="Garantia Oficial">
-                <h4>Garantia Total</h4>
-                <p>Todos os produtos acompanham Nota Fiscal e garantia contra defeitos.</p>
             </div>
 
-            <div class="diferencial-item">
-                <img src="c2e3aa3a6acbbfef1ab09d62e0859479.jpg" alt="Entrega Expressa">
-                <h4>Envio Rápido e Seguro</h4>
-                <p>Postagem rápida com código de rastreio direto no seu e-mail.</p>
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-tag">Destaque</span>
+                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/99f914872b73d06f77ad21a6a8b851ce.jpg" alt="Terço de Cristal Vermelho Rubi">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Terço SAGRADO CORAÇÃO RUBI</h3>
+                    <p class="product-desc">Edição especial com cristais facetados em tom vermelho rubi profundo, detalhes dourados e medalha de Nossa Senhora.</p>
+                    <div class="product-price-row">
+                        <span class="product-price">R$ 169,90</span>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </section>
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-tag">Exclusivo</span>
+                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/a2c51a7b3573a932a285bd8e85d56467.jpg" alt="Terço de Cristal Negro e Rosas">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Terço ROSARIUM SANTA TERESINHA</h3>
+                    <p class="product-desc">Contas em cristal negro brilhante intercaladas com delicadas rosas brancas esculpidas e cruz de São Bento em metal nobre.</p>
+                    <div class="product-price-row">
+                        <span class="product-price">R$ 159,90</span>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+            </div>
 
-    <footer>
-        <p><strong>Mylena Eletrônicos</strong> - Chopinzinho, Paraná</p>
-        
-        <div class="contato-whatsapp">
-            <img src="04df59898054c3ce4b16bec09db8dbf0.jpg" alt="WhatsApp Icon">
-            <span>Atendimento: (46) 99900-0000</span>
-        </div>
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-tag">Edição Fina</span>
+                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/a1e18d4bdf2ba82610b8039fe4b0c0bf.jpg" alt="Bíblias Sagradas em Couro">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Bíblia Sagrada Capa em Couro Fino</h3>
+                    <p class="product-desc">Tradução oficial com gravação em relevo dourado nas opções Preto Nobre, Marrom Clássico e Rosé Nobre. Filos dourados.</p>
+                    <div class="product-price-row">
+                        <span class="product-price">R$ 189,90</span>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+            </div>
 
-        <p style="margin-top: 20px; font-size: 12px; color: #484f58;">&copy; 2026 Mylena Eletrônicos. Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
-
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="https://raw.githubusercontent.com/moraesmylena-boop/Mylena/main/d250853335091df40024e524dde7ae7f.jpg" alt="Cúpula de Vidro Nossa Senhora Aparecida">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Redoma Sacra APARECIDA EM PÉROLAS</h3>
+                    <p class="product-desc">Imagem ricamente trabalhada em manto negro com cravação de cristais e pérolas sob cúpula de vidro e madeira nobre.</p>
+                    <div class="product-price-row">
+                        <span class="produ
