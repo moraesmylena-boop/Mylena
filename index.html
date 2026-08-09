@@ -5,177 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechStore - Eletrônicos</title>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa;">
 
-    <header>
-        <h1>TechStore</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
+    <header style="background-color: #333; color: white; padding: 15px; text-align: center;">
+        <h1 style="margin: 0;">TechStore</h1>
+        <nav style="margin-top: 10px;">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px;">
+                <li><a href="#home" style="color: white; text-decoration: none;">Início</a></li>
+                <li><a href="#produtos" style="color: white; text-decoration: none;">Produtos</a></li>
+                <li><a href="#contato" style="color: white; text-decoration: none;">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Bem-vindo à sua nova loja de tecnologia!</h2>
-            <p>Encontre os melhores smartphones, notebooks e acessórios do mercado com os melhores preços.</p>
+        <section id="home" style="text-align: center; padding-bottom: 20px;">
+            <img src="691c428496997bcd2783ccc1820ad2d6.jpg" alt="Banner principal TechStore" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+            <h2 style="margin-top: 20px;">Bem-vindo à sua nova loja de tecnologia!</h2>
+            <p>Encontre os melhores smartphones, notebooks e acessórios do mercado.</p>
         </section>
 
-        <section id="produtos">
+        <section id="produtos" style="padding: 20px; text-align: center;">
             <h2>Produtos em Destaque</h2>
             
-            <article>
-                <h3>Smartphone Ultra 5G</h3>
-                <p>O smartphone mais rápido da geração com câmera de 108MP.</p>
-                <p><strong>R$ 2.499,00</strong></p>
-                <button>Adicionar ao Carrinho</button>
-            </article>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
+                    <img src="e3e66e45dd20cc71d7b8752b483ede12.jpg" alt="Smartphone" style="max-width: 120px; height: 120px; object-fit: contain;">
+                    <h3>Smartphone Ultra</h3>
+                    <p><strong>R$ 2.499,00</strong></p>
+                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
+                </article>
 
-            <article>
-                <h3>Notebook Gamer Pro</h3>
-                <p>Processador de última geração e placa de vídeo dedicada.</p>
-                <p><strong>R$ 5.899,00</strong></p>
-                <button>Adicionar ao Carrinho</button>
-            </article>
+                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
+                    <img src="57e9055f14c78da159f22cea5b27906c.jpg" alt="Notebook" style="max-width: 120px; height: 120px; object-fit: contain;">
+                    <h3>Notebook Pro</h3>
+                    <p><strong>R$ 4.899,00</strong></p>
+                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
+                </article>
+
+                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
+                    <img src="7db2ac993e53182c9a1a1f651f86fef0.jpg" alt="Smartwatch" style="max-width: 120px; height: 120px; object-fit: contain;">
+                    <h3>Smartwatch Fit</h3>
+                    <p><strong>R$ 399,00</strong></p>
+                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
+                </article>
+
+                <article style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px;">
+                    <img src="ad22fbced8453477150a3076cd49267f.jpg" alt="Fone Bluetooth" style="max-width: 120px; height: 120px; object-fit: contain;">
+                    <h3>Headphone Bass</h3>
+                    <p><strong>R$ 250,00</strong></p>
+                    <button style="background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; width: 100%; border-radius: 5px;">Comprar</button>
+                </article>
+            </div>
         </section>
+
+        <section id="diferenciais" style="background: white; padding: 20px; margin-top: 20px; text-align: center;">
+            <h2>Por que escolher nossa loja?</h2>
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <div>
+                    <img src="a8b05fcb1fc67c4077e0b68908859071.jpg" alt="Selo Garantia" style="width: 60px;">
+                    <h3>Garantia Oficial</h3>
+                    <p style="max-width: 250px;">Todos os produtos acompanham nota fiscal e garantia de até 12 meses.</p>
+                </div>
+                <div>
+                    <img src="c2c3aa3a6acbbfef1ab09d62c0859479.jpg" alt="Caminhão Entrega" style="width: 60px;">
+                    <h3>Entrega Rápida</h3>
+                    <p style="max-width: 250px;">Enviamos para todo o Brasil com rastreamento em tempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <img src="b488acd8b3c2869e8604e650f4789a37.jpg" alt="Design Teclado Tech" style="width: 100%; height: 200px; object-fit: cover; margin-top: 20px; display: block;">
+
+        <section id="contato" style="padding: 20px; background: white; text-align: center;">
+            
+            <div style="background: #e9ecef; padding: 15px; border-radius: 8px; max-width: 400px; margin: 0 auto 30px auto;">
+                <img src="31ed22dc58062278c1a295d6be03c967.jpg" alt="Logo Pix" style="width: 80px; margin-bottom: 10px;">
+                <h3 style="margin: 0;">Pagamento Instantâneo</h3>
+                <p><strong>Chave PIX (CNPJ):</strong> 00.000.000/0001-00</p>
+                <p>Pague no PIX e ganhe 10% de desconto!</p>
+            </div>
+
+            <div>
+                <h2>Fale Conosco</h2>
+                <p>Tem dúvidas? Nossa equipe atende de Seg a Sex, das 09h às 18h.</p>
+                
+                <a href="https://wa.me/5511900000000" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px;">
+                    <img src="f798d4ded0550722e9a86998bc68cc02.jpg" alt="WhatsApp" style="width: 30px; border-radius: 50%;">
+                    (11) 90000-0000
+                </a>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 TechStore. Todos os direitos reservados.</p>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 20px;">
+        <p><strong>Razão Social:</strong> TechStore Eletrônicos LTDA (Fictício)</p>
+        <p>&copy; 2026 Todos os direitos reservados.</p>
     </footer>
 
 </body>
-</html><section id="informacoes-loja">
-    <h2>Nossa Loja Física</h2>
-    <address>
-        <p><strong>Endereço:</strong> Av. Paulista, 1000 - Sala 42</p>
-        <p><strong>Cidade/UF:</strong> São Paulo - SP</p>
-        <p><strong>CEP:</strong> 01310-100</p>
-    </address>
+</html>
 
-    <h3>Atendimento ao Cliente</h3>
-    <p><strong>Telefone/WhatsApp:</strong> (11) 99999-8888</p>
-    <p><strong>E-mail:</strong> contato@sualoja.com.br</p>
-    <p><strong>Horário de Funcionamento:</strong> Segunda a Sexta, das 09h às 18h</p>
-</section><section id="diferenciais">
-    <h2>Por que escolher nossa loja?</h2>
-    
-    <ul>
-        <li>
-            <h3>Garantia Oficial</h3>
-            <p>Todos os produtos acompanham nota fiscal e garantia de até 12 meses.</p>
-        </li>
-        <li>
-            <h3>Entrega Rápida</h3>
-            <p>Enviamos para todo o Brasil com rastreamento em tempo real.</p>
-        </li>
-        <li>
-            <h3>Qualidade Certificada</h3>
-            <p>Trabalhamos apenas com produtos originais e testados por especialistas.</p>
-        </li>
-        <li>
-            <h3>Pagamento Seguro</h3>
-            <p>Parcelamento em até 12x no cartão ou desconto especial no Pix.</p>
-        </li>
-    </ul>
-</section><section id="servicos-e-valores">
-    <h2>Serviços e Valores</h2>
-    
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Serviço</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Película de Proteção + Aplicação</td>
-                <td>Aplicação de película de vidro temperado/hidrogel</td>
-                <td>R$ 49,90</td>
-            </tr>
-            <tr>
-                <td>Manutenção Preventiva</td>
-                <td>Limpeza interna e troca de pasta térmica para PCs/Notebooks</td>
-                <td>R$ 150,00</td>
-            </tr>
-            <tr>
-                <td>Frete Fixo (Região Metropolitana)</td>
-                <td>Entrega expressa via motoboy em até 24h</td>
-                <td>R$ 15,00</td>
-            </tr>
-        </tbody>
-    </table>
-</section><section id="depoimentos">
-    <h2>O que nossos clientes dizem</h2>
-
-    <article>
-        <p>"Comprei meu celular e chegou em 2 dias aqui em SP. Produto impecável!"</p>
-        <p><strong>- Carlos M.</strong> ⭐⭐⭐⭐⭐</p>
-    </article>
-
-    <article>
-        <p>"Atendimento nota 10 pelo WhatsApp, tiraram todas as minhas dúvidas sobre as configurações do notebook."</p>
-        <p><strong>- Juliana R.</strong> ⭐⭐⭐⭐⭐</p>
-    </article>
-</section><section id="fale-conosco">
-    <h2>Fale Conosco</h2>
-    <form action="#" method="POST">
-        <label for="nome">Nome Completo:</label><br>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required><br><br>
-
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required><br><br>
-
-        <label for="mensagem">Sua Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos te ajudar?" required></textarea><br><br>
-
-        <button type="submit">Enviar Mensagem</button>
-    </form>
-</section><section id="pagamento-pix">
-    <h2>Pagamento Instantâneo via PIX</h2>
-    <p>Pague com PIX e ganhe <strong>10% de desconto</strong> no valor total!</p>
-    
-    <div>
-        <p><strong>Chave PIX (CNPJ):</strong> 12.345.678/0001-90</p>
-        <p><strong>Favorecido:</strong> Sua Loja Eletrônicos LTDA</p>
-    </div>
-</section><footer>
-    <hr>
-    <div>
-        <p><strong>Razão Social:</strong> Sua Loja Eletrônicos e Tecnologia LTDA</p>
-        <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="#politica-privacidade">Política de Privacidade (LGPD)</a></li>
-            <li><a href="#trocas-devolucoes">Política de Trocas e Devoluções (CDC)</a></li>
-            <li><a href="#termos-uso">Termos e Condições de Uso</a></li>
-        </ul>
-    </nav>
-    
-    <p>&copy; 2026 Todos os direitos reservados.</p>
-</footer><footer>
-    <hr>
-    <div>
-        <p><strong>Razão Social:</strong> Sua Loja Eletrônicos e Tecnologia LTDA</p>
-        <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="#politica-privacidade">Política de Privacidade (LGPD)</a></li>
-            <li><a href="#trocas-devolucoes">Política de Trocas e Devoluções (CDC)</a></li>
-            <li><a href="#termos-uso">Termos e Condições de Uso</a></li>
-        </ul>
-    </nav>
-    
-    <p>&copy; 2026 Todos os direitos reservados.</p>
-</footer><a href="https://wa.me/5511999998888?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida!" target="_blank">
-    Falar no WhatsApp
-</a>
